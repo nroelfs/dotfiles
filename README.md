@@ -66,4 +66,8 @@ stow backgrounds
 stow hyprpaper
 stow kitty
 
+rm ~/.bashrc
+cp ~/dotfiles/.bashrc ~/
+
+
 ```
