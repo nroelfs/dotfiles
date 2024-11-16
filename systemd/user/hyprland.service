@@ -1,0 +1,10 @@
+[Unit]
+Description=Hyprland Wayland Compositor
+
+[Service]
+ExecStart=/usr/bin/Hyprland
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
