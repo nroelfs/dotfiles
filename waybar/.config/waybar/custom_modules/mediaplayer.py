@@ -125,9 +125,10 @@ class PlayerManager:
 
         if track_info:
             if player.props.status == "Playing":
-                track_info = " " + track_info
+                track_info = f" {track_info}"
             else:
-                track_info = " " + track_info
+                track_info = f" {track_info}"
+
         # only print output if no other player is playing
         current_playing = self.get_first_playing_player()
         if current_playing is None or current_playing.props.player_name == player.props.player_name:
@@ -151,6 +152,28 @@ class PlayerManager:
         logger.info(f"Player {player.props.player_name} has vanished")
         self.show_most_important_player()
 
+    def previous_track(self):
+        current_player = self.get_first_playing_player()
+        if current_player:
+            logger.info(f"Previous track for player {current_player.props.player_name}")
+            current_player.previous()
+
+    def next_track(self):
+        current_player = self.get_first_playing_player()
+        if current_player:
+            logger.info(f"Next track for player {current_player.props.player_name}")
+            current_player.next()
+
+    def toggle_play_pause(self):
+        current_player = self.get_first_playing_player()
+        if current_player:
+            if current_player.props.status == "Playing":
+                logger.info(f"Pausing player {current_player.props.player_name}")
+                current_player.pause()
+            else:
+                logger.info(f"Playing player {current_player.props.player_name}")
+                current_player.play()
+
 def parse_arguments():
     parser = argparse.ArgumentParser()
 
@@ -163,6 +186,11 @@ def parse_arguments():
     parser.add_argument("--player")
 
     parser.add_argument("--enable-logging", action="store_true")
+
+    # Add previous, next, and toggle play/pause arguments
+    parser.add_argument("--prev", action="store_true", help="Previous track")
+    parser.add_argument("--next", action="store_true", help="Next track")
+    parser.add_argument("--toggle", action="store_true", help="Toggle play/pause")
 
     return parser.parse_args()
 
@@ -188,7 +216,15 @@ def main():
         logger.info(f"Exclude player {arguments.exclude}")
 
     player = PlayerManager(arguments.player, arguments.exclude)
-    player.run()
+
+    if arguments.prev:
+        player.previous_track()
+    elif arguments.next:
+        player.next_track()
+    elif arguments.toggle:
+        player.toggle_play_pause()
+    else:
+        player.run()
 
 
 if __name__ == "__main__":
