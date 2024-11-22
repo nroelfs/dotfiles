@@ -38,7 +38,7 @@ button:hover {
 }
 
 #workspaces button {
-    background-color: @crust;
+    background-color: @base;
     padding: 0 4px;
     border-radius: 14px;
     margin-left: 4px;
@@ -80,7 +80,7 @@ button:hover {
     padding-left: 4px;
     padding-right: 4px;*/
     background: transparent;
-    background-color: @crust;
+    background-color: @base;
     border-radius: 14px;
     padding: 3px 6px;
     margin: 3px 4px;
@@ -88,7 +88,7 @@ button:hover {
 
 #window {
     background: transparent;
-    background-color: @crust;
+    background-color: @base;
     border-radius: 14px;
     padding: 3px 10px;
     margin: 3px 10px;
@@ -150,26 +150,17 @@ button:hover {
 #custom-spotify,
 #custom-notifications {
     background: transparent;
-    background-color: @crust;
+    background-color: @base;
     border-radius: 14px;
     padding: 3px 14px;
     margin: 3px 6px;
 }
 
 #custom-power {
-    color: @crust;
+    color: @base;
     background-color: @lightblue;
     border-radius: 14px;
     padding: 3px 14px;
     margin: 3px 6px;
 }
 
-menu {
-    border-radius: 15px;
-    background: @crust;
-    color: #b5e8e0;
-}
-menuitem {
-    border-radius: 15px;
-    color: @overlay0;
-}

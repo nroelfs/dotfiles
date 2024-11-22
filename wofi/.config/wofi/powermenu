@@ -1,0 +1,5 @@
+mode=dmenu
+width=20%
+height=250
+
+hide_search=true
