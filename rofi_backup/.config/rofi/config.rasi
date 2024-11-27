@@ -1,0 +1,22 @@
+configuration {
+  show-icons: true;
+  scroll-method:	0;
+  sidebar-mode:		true;
+  show-icons:		false;
+  sort:			true;
+  sorting-method:	"normal";
+  drun-display-format:	"{name}";
+  display-ssh:    "󰣀 ssh:";
+  display-run:    "󱓞 run:";
+  display-drun:   "󰣖 Launch:";
+  display-window: "󱂬 window:";
+  display-combi:  "󰕘 combi:";
+  display-filebrowser: "󰉋 filebrowser:";
+
+  clipboard {
+    display-name: " Clipboard:";
+  }
+
+}
+
+@theme "~/.config/rofi/catppuccin-mocha.rasi"
