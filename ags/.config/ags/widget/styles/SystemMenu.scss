@@ -1,0 +1,36 @@
+@use "./mocha.scss" as mocha;
+
+.systemMenuContainer{
+    background-color: mocha.$crust;
+    border-radius: 8px;
+}
+
+.labelMediumBold {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+.iconButton {
+    min-width: 40px
+}
+
+.Notification {
+    background-color: mocha.$crust;
+    border-radius: 8px;
+    padding: 3px 6px;
+    margin: 3px 4px;
+}
+
+.systemMenuIconButton {
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 60px;
+    border-radius: 8px;
+    margin: 8px;
+    border: 0;
+
+    &:hover {
+        font-weight: bold;
+    }
+}

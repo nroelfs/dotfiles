@@ -1,0 +1,60 @@
+@use "./mocha.scss" as vars;
+
+.mediaPlayersContainer {
+    margin: 20px
+}
+
+.mediaPlayer {
+    margin-top: 20px;
+    background-color: vars.$crust;
+    border-radius: 8px;
+    padding: 4px;
+    color: vars.$overlay0;
+
+    .controlButton {
+        all: unset;
+        background-color: vars.$crust;
+        color: vars.$overlay0;
+        padding: 4px 4px 4px 2px;
+        border: none;
+        min-height: 25px;
+        min-width: 30px;
+        border-radius: 8px;
+    }
+
+    .controlButton:hover {
+        background-color: vars.$mauve;
+    }
+
+    .seekContainer {
+        margin: 10px 0 10px 0;
+    }
+
+    .seek {
+        // margin: 0 20px 0 20px;
+        trough {
+        background: vars.$overlay0;
+        min-height: 4px;
+        border-radius: 8px;
+
+            slider {
+                color: vars.$mauve;
+                background: vars.$crust;
+            }
+
+            highlight {
+                background: vars.$mauve;
+                border-radius: 8px;
+            }
+        }
+    }
+    .cover-art {
+        min-width: 120px;
+        min-height: 120px;
+        border-radius: 9px;
+        margin-right: .6rem;
+        background-size: contain;
+        background-position: center;
+    }
+
+}

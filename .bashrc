@@ -9,8 +9,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias clear='clear & fastfetch'
-alias c="clear & fastfetch"
-alias cls="clear & fastfetch"
+alias c="clear"
+alias cls="clear"
 
 alias pipes="pipes.sh -t 0"
 

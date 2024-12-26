@@ -1,0 +1,104 @@
+@import "./mocha.scss";
+@import "./MediaPlayer.scss";
+@import "./SystemMenu.scss";
+$radius: 8px;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
+    transition-duration: .1s;
+    transition-property: background-color;
+}
+
+window.Bar {
+    border: none;
+    box-shadow: none;
+    font-size: 1.1em;
+    font-weight: bold;
+
+    button {
+        all: unset;
+        background-color: transparent;
+    }
+
+    label {
+        transition: 200ms;
+        padding: 0 8px;
+        margin: 2px;
+        border-radius: $radius;
+        border: 1pt solid transparent;
+    }
+
+
+    .Workspaces,
+    .Media,
+    .Battery,
+    .AudioSlider,
+    .Focused,
+    .Wifi,
+    .Time
+    {
+        background: transparent;
+        background-color: $base;
+        border-radius: $radius;
+        padding: 3px 6px;
+        margin: 3px 4px;
+    }
+
+    .Workspaces,
+    .Media,
+    .Battery,
+    .Focused
+    {
+        color: $overlay0;
+    }
+
+    .Workspaces .focused label {
+        color: $mauve;
+        border-color: $mauve;
+
+        label.urgent {
+            border-color: $red;
+        }
+    }
+
+    .Time {
+        * {
+            color: $maroon;
+        }
+    }
+
+    .Wifi {
+        color: $yellow;
+    }
+
+    .FocusedClient {
+        color: $mauve;
+    }
+
+    .Battery label {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .AudioSlider {
+        * {
+            all: unset;
+            color: $blue;
+        }
+
+        .Icon {
+            margin-right: .6em;
+            color: $blue;
+        }
+    }
+    .menuButton{
+        background-color: $lightblue;
+        color: $crust;
+        border-radius: $radius;
+        padding: 3px 6px;
+        margin: 3px 4px;
+    }
+}
