@@ -5,15 +5,15 @@ import {execAsync} from "astal/process"
 export default function () {
     return <box
         vertical={false}
-        className="row"
+        className="poweroption row"
         halign={Gtk.Align.CENTER}>
-        <button
+        {/* <button
             className="systemMenuIconButton"
             label="󰍃"
             onClicked={() => {
                 App.toggle_window(SystemMenuWindowName)
                 execAsync("uwsm stop")
-            }}/>
+            }}/> */}
         <button
             className="systemMenuIconButton"
             label=""

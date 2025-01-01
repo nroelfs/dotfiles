@@ -1,4 +1,4 @@
-import { Astal, Gtk} from "astal/gtk3"
+import { Gtk} from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import { bind, Variable } from "astal"
 
@@ -12,16 +12,18 @@ function lengthStr(length: number) {
 function MediaPlayer({ player }: { player: Mpris.Player }) {
     const { START, END, CENTER } = Gtk.Align
 
+
     const title = bind(player, "title").as(t =>
         t || "Unknown Track")
 
     const artist = bind(player, "artist").as(a =>
         a || "Unknown Artist")
 
-    const coverArt = bind(player, "coverArt").as(c =>
-        `background-image: url('${c}')`)
+    //NOTE IMPORTANT:  if Error check if gvfs is installed !!!
+    const coverArt = bind(player, "cover_art").as(c =>{
+        return `background-image: url('${c}');`
+    })
 
-    // player.position will keep changing even when the player is paused.  This is a workaround
     const realPosition = Variable(player.position)
     bind(player, "position").subscribe((position) => {
         if (player.playbackStatus === Mpris.PlaybackStatus.PLAYING) {
@@ -36,7 +38,7 @@ function MediaPlayer({ player }: { player: Mpris.Player }) {
     )
     return <box className="mediaPlayer">
         <box className="cover-art" css={coverArt} />
-        <box vertical={true}>
+        <box vertical={true} className="mediaInfo">
             <label
                 className="labelSmallBold"
                 truncate={true}

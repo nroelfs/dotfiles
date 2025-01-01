@@ -6,6 +6,7 @@ import {Gtk, Gdk} from "astal/gtk3"
 import MediaPlayer from "./components/MediaPlayer"
 import NotificationLog from "./components/notifications/NotificationLog"
 import PowerOption from "./components/PowerOption"
+import BluetoothControls from "./components/bluetooth/BluetoothControls"
 
 export const SystemMenuWindowName = "systemWindow"
 
@@ -76,6 +77,9 @@ export default function () {
                             </box>
                             <box margin={5}>
                                 <MediaPlayer/>
+                            </box>
+                            <box margin={5}>
+                                <BluetoothControls/>
                             </box>
                             <box margin={5}>
                                 <PowerOption/>

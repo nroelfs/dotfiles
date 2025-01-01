@@ -1,5 +1,5 @@
 import { App } from "astal/gtk3"
-import { Variable, GLib, bind } from "astal"
+import { bind } from "astal"
 import { Astal, Gtk, Gdk } from "astal/gtk3"
 import Hyprland from "gi://AstalHyprland"
 import Battery from "gi://AstalBattery"
@@ -12,27 +12,27 @@ import Time from "./components/Time"
 import { SystemMenuWindowName } from "./SystemMenu"
 
 
-function SysTray() {
-    const tray = Tray.get_default()
+// function SysTray() {
+//     const tray = Tray.get_default()
 
-    return <box>
-        {bind(tray, "items").as(items => items.map(item => {
-            if (item.iconThemePath)
-                App.add_icons(item.iconThemePath)
+//     return <box>
+//         {bind(tray, "items").as(items => items.map(item => {
+//             if (item.iconThemePath)
+//                 App.add_icons(item.iconThemePath)
 
-            const menu = item.create_menu()
+//             const menu = item.create_menu()
 
-            return <button
-                tooltipMarkup={bind(item, "tooltipMarkup")}
-                onDestroy={() => menu?.destroy()}
-                onClickRelease={self => {
-                    menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null)
-                }}>
-                <icon gIcon={bind(item, "gicon")} />
-            </button>
-        }))}
-    </box>
-}
+//             return <button
+//                 tooltipMarkup={bind(item, "tooltipMarkup")}
+//                 onDestroy={() => menu?.destroy()}
+//                 onClickRelease={self => {
+//                     menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null)
+//                 }}>
+//                 <icon gIcon={bind(item, "gicon")} />
+//             </button>
+//         }))}
+//     </box>
+// }
 
 function Wifi() {
     const { wifi } = Network.get_default()
@@ -119,7 +119,6 @@ export default function (monitor: Gdk.Monitor) {
                 <FocusedClient />
             </box>
             <box hexpand halign={Gtk.Align.END} >
-                <SysTray />
                 <Wifi />
                 <AudioSlider />
                 <BatteryLevel />

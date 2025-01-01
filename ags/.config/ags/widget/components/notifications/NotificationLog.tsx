@@ -2,7 +2,6 @@ import Notifd from "gi://AstalNotifd"
 import { bind } from "astal"
 import Notification from "./Notification"
 import {Gtk} from "astal/gtk3"
-import { Scrollable } from "astal/gtk3/widget"
 
 export default function () {
     const notifications = Notifd.get_default()

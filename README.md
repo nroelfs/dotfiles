@@ -1,6 +1,6 @@
-# Install Guide 
+# Install Guide
 
-## Install Yay 
+## Install Yay
 AUR Package Manager
 ```
 git clone https://aur.archlinux.org/yay.git
@@ -11,9 +11,10 @@ makepkg -si
 ## Install Packages
 Install required Packages
 ```
-sudo pacman -S nano kitty networkmanger bluez bluetuith spaceship nwg-look hyprland hyprpaper hypridle hyprlock wofi waybar jdk21-openjdk nodejs npm stow git neofetch
+sudo pacman -S nano kitty networkmanger bluez bluetuith spaceship nwg-look hyprland hyprpaper hypridle hyprlock wofi waybar hyprpaper zoxide fzf jdk21-openjdk nodejs npm stow git fastfetch
 
-yay -S ttf-cascadia-modo-nerd ttf-font-awesome deno dotnet-sdk dotnet-runtime 
+
+yay -S ttf-cascadia-modo-nerd ttf-font-awesome deno dotnet-sdk dotnet-runtime
 ```
 
 ## Set Idle Config
@@ -31,9 +32,9 @@ general {
 }
 
 listener {
-  timeout = 300                                  
-  on-timeout = brightnessctl -s set 10         
-  on-resume = brightnessctl -r                 
+  timeout = 300
+  on-timeout = brightnessctl -s set 10
+  on-resume = brightnessctl -r
 }
 
 listener {

@@ -5,12 +5,6 @@
     border-radius: 8px;
 }
 
-.labelMediumBold {
-    padding-left: 50px;
-    padding-right: 50px;
-    font-weight: bold;
-}
-
 .iconButton {
     min-width: 40px
 }
@@ -20,17 +14,39 @@
     border-radius: 8px;
     padding: 3px 6px;
     margin: 3px 4px;
-}
 
-.systemMenuIconButton {
-    min-width: 60px;
-    min-height: 60px;
-    font-size: 60px;
-    border-radius: 8px;
-    margin: 8px;
-    border: 0;
-
-    &:hover {
+    .labelMediumBold {
+        padding-left: 50px;
+        padding-right: 50px;
         font-weight: bold;
     }
+}
+
+.systemMenuIconButton, .iconButton {
+    all: unset;
+    background-color: transparent;
+    min-width: 30px;
+    font-size: 25px;
+    margin: 0 10px 0 0;
+    border-radius: 16px;
+    padding: 10px 15px 10px 15px;
+    border: 0;
+    color: mocha.$overlay0;
+    &:hover {
+        font-weight: bold;
+        color: mocha.$mauve;
+    }
+}
+
+.poweroption {
+    .row {
+        margin: 0 120px;
+    }
+    .rowRevealer {
+        padding: 6px 30px 6px 30px;
+    }
+
+}
+.bluetoothlabel{
+    padding-right: 10px;
 }

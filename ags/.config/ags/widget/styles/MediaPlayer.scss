@@ -5,7 +5,7 @@
 }
 
 .mediaPlayer {
-    margin-top: 20px;
+    margin: 20px 10px 0 10px;
     background-color: vars.$crust;
     border-radius: 8px;
     padding: 4px;
@@ -13,7 +13,6 @@
 
     .controlButton {
         all: unset;
-        background-color: vars.$crust;
         color: vars.$overlay0;
         padding: 4px 4px 4px 2px;
         border: none;
@@ -23,7 +22,7 @@
     }
 
     .controlButton:hover {
-        background-color: vars.$mauve;
+        color: vars.$mauve;
     }
 
     .seekContainer {
@@ -55,6 +54,9 @@
         margin-right: .6rem;
         background-size: contain;
         background-position: center;
+    }
+    .mediaInfo {
+        margin-right: 5px;
     }
 
 }
