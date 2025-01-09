@@ -5,6 +5,7 @@ import {SystemMenuWindowName} from "../../SystemMenu";
 import {getBluetoothIcon, getBluetoothName, toggleBluetooth} from "../../utils/bluetooth";
 import Bluetooth from "gi://AstalBluetooth";
 import { Devices } from "./Devices";
+import { Label } from "astal/gtk3/widget";
 
 export default function () {
     const bluetooth = Bluetooth.get_default()
@@ -23,6 +24,7 @@ export default function () {
         {bind(bluetooth, "isPowered").as((isPowered) => {
             if (!isPowered) {
                 return <box>
+                    <label label={"       "}/>
                     <label
                         className="labelMediumBold"
                         halign={Gtk.Align.START}
@@ -80,7 +82,7 @@ export default function () {
                                 label="Devices"
                                 className="labelLargeBold"/>
                             <button
-                                className="transparentButton"
+                                className="systemMenuIconButton"
                                 label={bind(bluetooth.adapter, "discovering").as((discovering) => {
                                     return discovering ? "Stop scanning" : "Scan"
                                 })}

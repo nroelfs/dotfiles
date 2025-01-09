@@ -2,8 +2,7 @@ import Bluetooth from "gi://AstalBluetooth"
 
 export function getBluetoothIcon() {
     const bluetooth = Bluetooth.get_default()
-
-    if (bluetooth.adapter == null) {
+    if (bluetooth.adapter == null || !bluetooth.adapter?.powered) {
         return "󰂲"
     } else {
         return "󰂯"

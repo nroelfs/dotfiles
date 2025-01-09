@@ -7,7 +7,7 @@ import Network from "gi://AstalNetwork"
 import Tray from "gi://AstalTray"
 
 // Components
-import AudioSlider from "./components/AudioSlider"
+import AudioSlider from "./components/media/AudioSlider"
 import Time from "./components/Time"
 import { SystemMenuWindowName } from "./SystemMenu"
 

@@ -1,18 +1,19 @@
 import {App, Astal} from "astal/gtk3"
-import Wp from "gi://AstalWp"
-import {bind, GLib, Variable} from "astal"
+import {bind, Variable} from "astal"
 import {Gtk, Gdk} from "astal/gtk3"
 
-import MediaPlayer from "./components/MediaPlayer"
+import MediaPlayer from "./components/media/MediaPlayer"
 import NotificationLog from "./components/notifications/NotificationLog"
 import PowerOption from "./components/PowerOption"
 import BluetoothControls from "./components/bluetooth/BluetoothControls"
+
+import { calcWidth } from "./utils/screen"
 
 export const SystemMenuWindowName = "systemWindow"
 
 export default function () {
     const hide = Variable(false);
-
+    const pwd = Variable<string>("");
     const setHide = (value: boolean) => {
         hide.set(value);
     }
@@ -70,7 +71,7 @@ export default function () {
                     className="scrollWindow"
                     vscroll={Gtk.PolicyType.AUTOMATIC}
                     propagateNaturalHeight={true}
-                    widthRequest={450}>
+                    widthRequest={calcWidth("25%")}>
                         <box vertical>
                             <box margin={5}>
                                 <NotificationLog/>
