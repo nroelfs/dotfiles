@@ -32,3 +32,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 PATH=~/.console-ninja/.bin:$PATH
+
+
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:$HOME/.duckdb/cli/latest"

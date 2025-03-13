@@ -10,7 +10,7 @@ import Tray from "gi://AstalTray"
 import AudioSlider from "./components/media/AudioSlider"
 import Time from "./components/Time"
 import { SystemMenuWindowName } from "./SystemMenu"
-
+import { SettingsWindowName } from "./Settings"
 
 // function SysTray() {
 //     const tray = Tray.get_default()
@@ -90,7 +90,8 @@ function MenuButton() {
         className="iconButton menuButton"
         label=" "
         onClicked={() => {
-            App.toggle_window(SystemMenuWindowName)
+            //App.toggle_window(SystemMenuWindowName)
+            App.toggle_window(SettingsWindowName)
         }}/>
 }
 
